@@ -1,0 +1,109 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f9fb;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 24px 24px 24px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: #222;
+  text-align: center;
+}
+
+.calc-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.clone {
+  display: none;
+}
+
+
+.calc-table th, .calc-table td {
+  padding: 12px 8px;
+  text-align: center;
+  min-width: 100px;
+  max-width: 100px;
+  width: 100px;
+  white-space: nowrap;
+}
+
+.calc-table th {
+  background: #f0f4f8;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e6ed;
+}
+
+.cell {
+  border-bottom: 1px solid #e0e6ed;
+  min-width: 100px;
+  max-width: 100px;
+  width: 100px;
+  white-space: nowrap;
+}
+
+.input-cell {
+  background: #f9fafb;
+}
+
+.input-cell.input-active {
+  background: #e3f2fd;
+}
+
+.input-cell.input-auto {
+  background: #fffde7;
+}
+
+.result {
+  background: #f1f8e9;
+  font-weight: bold;
+  color: #388e3c;
+}
+
+input[type="number"] {
+  width: 90%;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: transparent;
+  transition: border 0.2s;
+}
+
+input[type="number"]:focus {
+  border: 1.5px solid #42a5f5;
+  outline: none;
+}
+
+select {
+  width: 90%;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  appearance: none;
+}
+
+select:focus {
+  border: 1.5px solid #42a5f5;
+  outline: none;
+  box-shadow: 0 0 0 2px #90caf9;
+}

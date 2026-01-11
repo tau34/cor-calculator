@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>相関係数計算ツール</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>相関係数計算ツール</h1>
+      <p>
+        各変量について、標準偏差、分散、または平均および値および偏差値を入力してください。
+      </p>
+      <p>値、偏差値は、ある同一のデータのものを入力してください。</p>
+      <label for="select-variable">変量数:</label>
+      <select id="select-variable">
+        <option value="2">2変量</option>
+        <option value="3">3変量</option>
+        <option value="4">4変量</option>
+      </select>
+      <p>同時に入力できる変量数は<span id="max-vars" class="result">3</span>個までです。</p>
+      <p>入力された変量数: <span id="input-vars" class="result">0</span>個</p>
+      <table class="calc-table">
+        <thead>
+          <tr>
+            <th>変量</th>
+            <th>標準偏差</th>
+            <th>平均</th>
+            <th>値</th>
+            <th>偏差値</th>
+            <th>分散</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+      <h2>計算結果</h2>
+      <table class="calc-table">
+        <thead>
+          <tr>
+            <th>相関係数</th>
+            <th>A</th>
+            <th>B</th>
+            <th class="require-3">C</th>
+            <th class="require-4">D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cell result-cell">
+              <span>A</span>
+            </td>
+            <td class="cell result-cell">
+              <span>/</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-0">
+              <span id="result-0">-</span>
+            </td>
+            <td class="cell result-cell require-3" id="cell-result-1">
+              <span id="result-1">-</span>
+            </td>
+            <td class="cell result-cell require-4" id="cell-result-2">
+              <span id="result-2">-</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="cell result-cell">
+              <span>B</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-3">
+              <span id="result-3">-</span>
+            </td>
+            <td class="cell result-cell">
+              <span>/</span>
+            </td>
+            <td class="cell result-cell require-3" id="cell-result-4">
+              <span id="result-4">-</span>
+            </td>
+            <td class="cell result-cell require-4" id="cell-result-5">
+              <span id="result-5">-</span>
+            </td>
+          </tr>
+          <tr class="require-3">
+            <td class="cell result-cell">
+              <span>C</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-6">
+              <span id="result-6">-</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-7">
+              <span id="result-7">-</span>
+            </td>
+            <td class="cell result-cell">
+              <span>/</span>
+            </td>
+            <td class="cell result-cell require-4" id="cell-result-8">
+              <span id="result-8">-</span>
+            </td>
+          </tr>
+          <tr class="require-4">
+            <td class="cell result-cell">
+              <span>D</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-9">
+              <span id="result-9">-</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-10">
+              <span id="result-10">-</span>
+            </td>
+            <td class="cell result-cell" id="cell-result-11">
+              <span id="result-11">-</span>
+            </td>
+            <td class="cell result-cell">
+              <span>/</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="clone">
+      <table>
+        <tbody>
+          <tr id="row-_N_">
+            <td class="cell">
+              <span id="label-_N_">_X_</span>
+            </td>
+            <td class="cell input-cell" id="cell-_N_-a">
+              <input type="number" id="input-_N_-a" placeholder="-" />
+            </td>
+            <td class="cell input-cell" id="cell-_N_-b">
+              <input type="number" id="input-_N_-b" placeholder="-" />
+            </td>
+            <td class="cell input-cell" id="cell-_N_-c">
+              <input type="number" id="input-_N_-c" placeholder="-" />
+            </td>
+            <td class="cell input-cell" id="cell-_N_-d">
+              <input type="number" id="input-_N_-d" placeholder="-" />
+            </td>
+            <td class="cell input-cell" id="cell-_N_-e">
+              <input type="number" id="input-_N_-e" placeholder="-" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
