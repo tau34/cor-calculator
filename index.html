@@ -21,6 +21,10 @@
       </select>
       <p>同時に入力できる変量数は<span id="max-vars" class="result">3</span>個までです。</p>
       <p>入力された変量数: <span id="input-vars" class="result">0</span>個</p>
+      <p>変量1の名前: <input type="text" id="label-a" placeholder="A" /></p>
+      <p>変量2の名前: <input type="text" id="label-b" placeholder="B" /></p>
+      <p class="require-3">変量3の名前: <input type="text" id="label-c" placeholder="C" /></p>
+      <p class="require-4">変量4の名前: <input type="text" id="label-d" placeholder="D" /></p>
       <table class="calc-table">
         <thead>
           <tr>
@@ -40,16 +44,16 @@
         <thead>
           <tr>
             <th>相関係数</th>
-            <th>A</th>
-            <th>B</th>
-            <th class="require-3">C</th>
-            <th class="require-4">D</th>
+            <th id="result-label-a-0">A</th>
+            <th id="result-label-b-0">B</th>
+            <th class="require-3" id="result-label-c-0">C</th>
+            <th class="require-4" id="result-label-d-0">D</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="cell result-cell">
-              <span>A</span>
+              <span id="result-label-a-1">A</span>
             </td>
             <td class="cell result-cell">
               <span>/</span>
@@ -66,7 +70,7 @@
           </tr>
           <tr>
             <td class="cell result-cell">
-              <span>B</span>
+              <span id="result-label-b-1">B</span>
             </td>
             <td class="cell result-cell" id="cell-result-3">
               <span id="result-3">-</span>
@@ -83,7 +87,7 @@
           </tr>
           <tr class="require-3">
             <td class="cell result-cell">
-              <span>C</span>
+              <span id="result-label-c-1">C</span>
             </td>
             <td class="cell result-cell" id="cell-result-6">
               <span id="result-6">-</span>
@@ -100,7 +104,7 @@
           </tr>
           <tr class="require-4">
             <td class="cell result-cell">
-              <span>D</span>
+              <span id="result-label-d-1">D</span>
             </td>
             <td class="cell result-cell" id="cell-result-9">
               <span id="result-9">-</span>

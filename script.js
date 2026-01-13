@@ -20,11 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const pairs = ["AB", "AC", "AD", "AB", "BC", "BD", "AC", "BC", "CD", "AD", "BD", "CD"];
   let maxVars = 3;
   let inputDisabled = false;
+  let labels = ["A", "B", "C", "D"];
 
   const selectVariable = document.getElementById("select-variable");
   const cloneHTML = document.getElementById("row-_N_").outerHTML;
   for (let i = 0; i < 15; i++) {
-    const html = cloneHTML.replaceAll("_N_", i).replaceAll("_X_", vars[i]);
+    const html = cloneHTML.replaceAll("_N_", i).replaceAll("_X_", vars[i].split("").join("+"));
     document.getElementById("table-body").innerHTML += html;
   }
 
@@ -335,6 +336,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const val = selectVariable.value;
     updateRows(val);
     updateOverall();
+  });
+
+  ["a", "b", "c", "d"].forEach((k, i) => {
+    const labelInput = document.getElementById("label-" + k);
+    labelInput.addEventListener("input", () => {
+      labels[i] = labelInput.value || k.toUpperCase();
+      for (let j = 0; j < 15; j++) {
+        const headerCell = document.getElementById("label-" + j);
+        headerCell.innerText = vars[j].split("").join("+").replaceAll("A", labels[0])
+          .replaceAll("B", labels[1]).replaceAll("C", labels[2]).replaceAll("D", labels[3]);
+      }
+      ["a", "b", "c", "d"].forEach((l, j) => {
+        const resultLabel = document.getElementById("result-label-" + l + "-0");
+        resultLabel.innerText = labels[j];
+        const resultLabel1 = document.getElementById("result-label-" + l + "-1");
+        resultLabel1.innerText = labels[j];
+      });
+    });
   });
 
   updateRows("2");

@@ -89,8 +89,23 @@ input[type="number"]:focus {
   outline: none;
 }
 
+input[type="text"] {
+  width: 100px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: transparent;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border: 1.5px solid #42a5f5;
+  outline: none;
+}
+
 select {
-  width: 90%;
+  width: 100px;
   padding: 6px 8px;
   border: none;
   border-radius: 6px;
